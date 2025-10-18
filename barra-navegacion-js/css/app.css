@@ -1,0 +1,205 @@
+/*custome properties*/
+
+:root{
+    --primario: #de1de8;
+    --secundario: #3358FF;
+    --blanco: #ffffff;
+    --negro: #000000;
+
+    --fuentePrincipal: 'Poppins', sans-serif;
+}
+
+/*RESET: REMS y Box Sizing*/
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*1rem = 10px*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem; /*quiero que las letras de todos los parrafos midan 1.6rem*//*le tengo que poner 1.6rem al tamaño de fuente de todo el body para que la base sean 16px como si fuera el valor por defecto*/
+    line-height: 1.5; /*interlineado de los parrafos*/
+}
+
+/*GLOBALES*/
+
+.contenedor {
+    max-width: 120rem; /*El ancho va a hasta 1200px puede ser menos, no mas*/
+    width: 90%; /*Va a tomar el 90% del tamaño del contenedor, en este caso el90% del contenedor, hasta los 1200px*/
+    margin: 0 auto; /*Para centrar horizontalmente*/
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+    font-family: var(--fuentePincipal);
+    margin: 2.5rem; 
+}
+
+h1 {
+    font-size: 4.4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    display: block; /*para evitar la separacion en el borde inferior*/
+    height: auto; /*para que las imagenes no pierdan proporcion en dospositivos pequeños(que la imagen se estire en pqueños dispositivos), le agrega la misma altura segun el ancho del contenedor*/
+}
+
+/*UTILIDADES*/
+ 
+.text-center { /*centra el contenido dentro del div de forma horixzontal*/
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+/*HEADER*/
+
+@media (min-width: 768px) { 
+    .header__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header__heading {
+    font-size: 4rem;
+}
+
+@media (min-width: 768px) { 
+    .header__heading {
+        font-size: 4.4rem;
+    }
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+/*
+.boton__abrir {
+    height: 4rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 25%;
+    background-color: #df11ea;
+    color: var(--blanco);
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+
+    .boton__abrir {
+        display: none;
+    }
+}
+*/
+
+.menu__toggle {
+    background: none;
+    border: none;
+    color: var(--negro);
+    font-size: 3rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.menu__toggle:focus {
+    outline: none;
+}
+
+@media (min-width: 768px) { 
+    .menu__toggle {
+        display: none; /* Ocultar botón de menú en pantallas grandes */
+    }
+}
+
+@media (min-width: 768px) { 
+    .header__logo {
+        display: unset;
+    }
+}
+
+.navegacion__contenedor {
+
+    display: none;
+   
+}
+
+/*
+
+@media (min-width: 768px) { 
+    .navegacion__contenedor--desktop {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+*/
+    
+
+
+
+@media (min-width: 768px) { 
+    .navegacion__contenedor {
+        display: flex;
+        flex-direction: row;
+        visibility: visible;
+    }
+}
+   
+
+.navegacion__link {
+    margin-bottom: 2rem;
+    color: var(--negro);
+    transition: background-color .3s;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.visible {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768PX) { 
+    .visible {
+        flex-direction: row;
+    }
+}
+
+.navegacion__link:hover {
+    background-color: #3358FF;
+    color: var(--blanco);
+}
+
+@media (min-width:768px) { 
+    .navegacion__link {
+        margin: 0 1rem;
+        padding: 1.3rem;
+        display: block;
+    }
+}
+
